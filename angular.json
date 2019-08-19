@@ -1,0 +1,239 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "proj1": {
+      "root": "projects/01_project",
+      "sourceRoot": "projects/01_project/src",
+      "projectType": "application",
+      "prefix": "proj1",
+      "schematics": {
+        "@schematics/angular:component": {
+          "prefix": "proj1",
+          "styleext": "scss",
+          "spec": false
+        },
+        "@schematics/angular:directive": {
+          "prefix": "proj1",
+          "spec": false
+        },
+        "@schematics/angular:module": {
+          "spec": false
+        },
+        "@schematics/angular:service": {
+          "spec": false
+        },
+        "@schematics/angular:pipe": {
+          "spec": false
+        },
+        "@schematics/angular:class": {
+          "spec": false
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/01_project",
+            "index": "projects/01_project/src/index.html",
+            "main": "projects/01_project/src/main.ts",
+            "tsConfig": "projects/01_project/tsconfig.app.json",
+            "polyfills": "projects/01_project/src/polyfills.ts",
+            "assets": [
+              "projects/01_project/src/favicon.ico"
+            ],
+            "styles": [],
+            "scripts": []
+          },
+          "configurations": {
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/01_project/src/environments/environment.ts",
+                  "with": "projects/01_project/src/environments/environment.local.ts"
+                }
+              ]
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/01_project/src/environments/environment.ts",
+                  "with": "projects/01_project/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/01_project/src/environments/environment.ts",
+                  "with": "projects/01_project/src/environments/environment.hmr.ts"
+                }
+              ]
+            },
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": false,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/01_project/src/environments/environment.ts",
+                  "with": "projects/01_project/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "proj1:build"
+          },
+          "configurations": {
+            "local": {
+              "browserTarget": "proj1:build:local"
+            },
+            "dev": {
+              "browserTarget": "proj1:build:dev"
+            },
+            "hmr": {
+              "browserTarget": "proj1:build:hmr"
+            },
+            "prod": {
+              "browserTarget": "proj1:build:prod"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/proj1/tsconfig.app.json",
+              "projects/proj1/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "proj2": {
+      "root": "projects/02_project",
+      "sourceRoot": "projects/02_project/src",
+      "projectType": "application",
+      "prefix": "proj2",
+      "schematics": {
+        "@schematics/angular:component": {
+          "prefix": "proj2",
+          "styleext": "scss",
+          "spec": false
+        },
+        "@schematics/angular:directive": {
+          "prefix": "proj2",
+          "spec": false
+        },
+        "@schematics/angular:module": {
+          "spec": false
+        },
+        "@schematics/angular:service": {
+          "spec": false
+        },
+        "@schematics/angular:pipe": {
+          "spec": false
+        },
+        "@schematics/angular:class": {
+          "spec": false
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/02_project",
+            "index": "projects/02_project/src/index.html",
+            "main": "projects/02_project/src/main.ts",
+            "polyfills": "projects/02_project/src/polyfills.ts",
+            "tsConfig": "projects/02_project/tsconfig.app.json",
+            "assets": [
+              "projects/02_project/src/favicon.ico"
+            ],
+            "styles": [],
+            "scripts": []
+          },
+          "configurations": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/02_project/src/environments/environment.ts",
+                  "with": "projects/02_project/src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/02_project/src/environments/environment.ts",
+                  "with": "projects/02_project/src/environments/environment.hmr.ts"
+                }
+              ]
+            },
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": false,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "projects/02_project/src/environments/environment.ts",
+                  "with": "projects/02_project/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "proj2:build"
+          },
+          "configurations": {
+            "dev": {
+              "browserTarget": "proj2:build:dev"
+            },
+            "hmr": {
+              "browserTarget": "proj2:build:hmr"
+            },
+            "prod": {
+              "browserTarget": "proj2:build:prod"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/02_project/tsconfig.app.json",
+              "projects/02_project/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "proj1"
+}

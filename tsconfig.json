@@ -1,0 +1,30 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "importHelpers": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "baseUrl": "projects",
+    "paths": {
+      "@proj1-env": ["01_project/src/environments/environment"],
+      "@proj1-app/core-services/*": ["01_project/src/services/*"],
+      "@proj2-env": ["02_project/src/environments/environment"],
+      "@proj2-app/core-services/*": ["02_project/src/services/*"]
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
+}

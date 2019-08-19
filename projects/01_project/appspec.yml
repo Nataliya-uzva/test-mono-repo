@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/proj1/
+permissions:
+  - object: /var/www/proj1/
+    owner: deployer
+    group: deployer
+    type:
+      - file
+  - object: /var/www/proj1/
+    owner: deployer
+    group: deployer
+    type:
+      - directory
+  - object: /var/www/
+    pattern: "*proj1*"
+    owner: deployer
+    group: deployer
+    type:
+      - directory
