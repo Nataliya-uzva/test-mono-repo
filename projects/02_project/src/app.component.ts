@@ -5,10 +5,13 @@ import { TestService } from '@proj2-app/core-services/test.service';
   selector: 'proj2-root',
   templateUrl: './app.component.html',
 })
-export class App2Component {
-  title = 'proj2';
+export class AppComponent {
+  public title = 'proj2';
+  public num: number = 2;
 
   public constructor(
     private _testService: TestService
-  ) {}
+  ) {
+    this.num = this._testService.getNumber();
+  }
 }
